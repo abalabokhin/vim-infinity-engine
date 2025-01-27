@@ -9,6 +9,8 @@ endif
 " Comments
 syntax match dComment /\/\/.*$/
 
+syntax match dOperator /\~/
+
 syntax region dCommentM start=/\/\*/ end=/\*\// contains=NONE
 
 syntax region dString start=/"/ skip=/\\"/ end=/"/ contains=NONE
@@ -27,6 +29,15 @@ syntax keyword dKeyword
             \ Player5
             \ Player6
             \ CD_STATE_NOTVALID
+            \ SAY
+            \ REPLY
+            \ EXIT
+            \ DO
+            \ BEGIN
+            \ CHAIN
+            \ EXTERN
+            \ GOTO
+            \ APPEND
 
 syntax keyword dTrigger
             \ Acquired
@@ -942,11 +953,12 @@ syntax keyword dAction
 
 
 highlight link dComment				Comment
-highlight link dCommentM				Comment
+highlight link dCommentM			Comment
 highlight link dString				String
 highlight link dKeyword				Keyword
 highlight link dTrigger				Function
 highlight link dAction				Statement
+highlight link dOperator			Operator
 
 let b:current_syntax = "d"
 
