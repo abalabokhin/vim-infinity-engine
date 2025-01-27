@@ -8,8 +8,9 @@ endif
 
 " Comments
 syntax match bafComment /\/\/.*$/
-
 syntax region bafCommentM start=/\/\*/ end=/\*\// contains=NONE
+
+syntax match bafOperator /\~/
 
 syntax match bafConst /@[0-9]*/
 syntax match bafConst /#[0-9]*/
@@ -952,6 +953,7 @@ highlight link bafString				String
 highlight link bafKeyword				Keyword
 highlight link bafTrigger				Function
 highlight link bafAction				Type
+highlight link bafOperator				Operator
 highlight link bafConst					Constant
 
 let b:current_syntax = "baf"
