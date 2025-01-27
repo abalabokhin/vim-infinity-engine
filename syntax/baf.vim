@@ -11,6 +11,9 @@ syntax match bafComment /\/\/.*$/
 
 syntax region bafCommentM start=/\/\*/ end=/\*\// contains=NONE
 
+syntax match bafConst /@[0-9]*/
+syntax match bafConst /#[0-9]*/
+
 syntax region bafString start=/"/ skip=/\\"/ end=/"/ contains=NONE
 
 syntax keyword bafKeyword
@@ -27,6 +30,8 @@ syntax keyword bafKeyword
             \ Player5
             \ Player6
             \ CD_STATE_NOTVALID
+            \ "LOCALS"
+            \ "GLOBAL"
 
 syntax keyword bafTrigger
             \ Acquired
@@ -946,7 +951,8 @@ highlight link bafCommentM				Comment
 highlight link bafString				String
 highlight link bafKeyword				Keyword
 highlight link bafTrigger				Function
-highlight link bafAction				Statement
+highlight link bafAction				Type
+highlight link bafConst					Constant
 
 let b:current_syntax = "baf"
 

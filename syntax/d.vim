@@ -8,10 +8,12 @@ endif
 
 " Comments
 syntax match dComment /\/\/.*$/
+syntax region dCommentM start=/\/\*/ end=/\*\// contains=NONE
 
 syntax match dOperator /\~/
 
-syntax region dCommentM start=/\/\*/ end=/\*\// contains=NONE
+syntax match dConst /@[0-9]*/
+syntax match dConst /#[0-9]*/
 
 syntax region dString start=/"/ skip=/\\"/ end=/"/ contains=NONE
 
@@ -38,6 +40,12 @@ syntax keyword dKeyword
             \ EXTERN
             \ GOTO
             \ APPEND
+            \ "LOCALS"
+            \ "GLOBAL"
+            \ JOURNAL
+            \ SOLVED_JOURNAL
+            \ UNSOLVED_JOURNAL
+            \ WEIGHT
 
 syntax keyword dTrigger
             \ Acquired
@@ -957,8 +965,9 @@ highlight link dCommentM			Comment
 highlight link dString				String
 highlight link dKeyword				Keyword
 highlight link dTrigger				Function
-highlight link dAction				Statement
+highlight link dAction				Type
 highlight link dOperator			Operator
+highlight link dConst				Constant
 
 let b:current_syntax = "d"
 
