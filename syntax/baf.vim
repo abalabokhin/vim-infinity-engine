@@ -9,6 +9,8 @@ endif
 " Comments
 syntax match bafComment /\/\/.*$/
 
+syntax match bafValue ".*" contained
+
 syntax keyword bafKeyword
             \ IF
             \ THEN
@@ -16,6 +18,13 @@ syntax keyword bafKeyword
             \ RESPONSE
             \ OR
             \ Myself
+            \ Player1
+            \ Player2
+            \ Player3
+            \ Player4
+            \ Player5
+            \ Player6
+            \ CD_STATE_NOTVALID
 
 syntax keyword bafTrigger
             \ Acquired
@@ -931,6 +940,7 @@ syntax keyword bafAction
 
 
 highlight link bafComment				Comment
+highlight link bafValue				String
 highlight link bafKeyword				Keyword
 highlight link bafTrigger				Function
 highlight link bafAction				Statement
