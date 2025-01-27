@@ -9,7 +9,9 @@ endif
 " Comments
 syntax match bafComment /\/\/.*$/
 
-syntax match bafValue ".*" contained
+syntax region bafCommentM start=/\/\*/ end=/\*\// contains=NONE
+
+syntax region bafString start=/"/ skip=/\\"/ end=/"/ contains=NONE
 
 syntax keyword bafKeyword
             \ IF
@@ -940,7 +942,8 @@ syntax keyword bafAction
 
 
 highlight link bafComment				Comment
-highlight link bafValue				String
+highlight link bafCommentM				Comment
+highlight link bafString				String
 highlight link bafKeyword				Keyword
 highlight link bafTrigger				Function
 highlight link bafAction				Statement
