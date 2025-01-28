@@ -40,8 +40,6 @@ syntax keyword dKeyword
             \ EXTERN
             \ GOTO
             \ APPEND
-            \ "LOCALS"
-            \ "GLOBAL"
             \ JOURNAL
             \ SOLVED_JOURNAL
             \ UNSOLVED_JOURNAL

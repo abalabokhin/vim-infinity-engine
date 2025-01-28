@@ -31,8 +31,6 @@ syntax keyword bafKeyword
             \ Player5
             \ Player6
             \ CD_STATE_NOTVALID
-            \ "LOCALS"
-            \ "GLOBAL"
 
 syntax keyword bafTrigger
             \ Acquired
